@@ -18,19 +18,19 @@ gulp.task('default', function() {
             cascade: false
     }))
 
-  .pipe(uncss({
-    html: ['www/*.html', 'www/**/*.html'],
-    ignore: [
-       /\.fade/,
-      /\.modal/,
-      '.affix',
-      /\.tooltip/,
-      /\.popover/,
-      /\.collaps/,
-      /\.carousel-inner/,
-      /\.open/  ],
-    timeout: 7000
-    }))
+  // .pipe(uncss({
+  //   html: ['www/*.html', 'www/**/*.html'],
+  //   ignore: [
+  //      /\.fade/,
+  //     /\.modal/,
+  //     '.affix',
+  //     /\.tooltip/,
+  //     /\.popover/,
+  //     /\.collaps/,
+  //     /\.carousel-inner/,
+  //     /\.open/  ],
+  //   timeout: 7000
+  //   }))
   .pipe(nano())
   .pipe(rename(function (path) { path.basename += ".min"; }))
   .pipe(gulp.dest('css'));
